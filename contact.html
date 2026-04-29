@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlekseyMedia | Contact</title>
+  <style>
+    html, body { background: #120f0c; color: #f4eadb; }
+    body { margin: 0; }
+  </style>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="IMAGES/Favicon/favicon-edited-blue-rounded.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700;800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260425-02" />
+</head>
+<body class="preloading contact-page-view">
+
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="ALEKSEYMEDIA" data-skip-loader="true">
+        <span class="brand-white">ALEKSEY</span><span class="brand-green">MEDIA</span>
+      </a>
+
+      <div class="nav-center">
+        <div class="page-indicator">
+          <span class="page-indicator-line"></span>
+          <span data-i18n="nav_contact">Контакты</span>
+          <span class="page-indicator-line"></span>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn active" data-lang="lv">LV</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+
+      <button class="pill mobile-menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobilePageMenu" data-mobile-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="wrap mobile-menu-panel" id="mobilePageMenu" data-mobile-menu hidden>
+      <a class="mobile-menu-brand" href="index.html" aria-label="ALEKSEYMEDIA" data-skip-loader="true">
+        <span class="brand-white">ALEKSEY</span><span class="brand-green">MEDIA</span>
+      </a>
+
+      <div class="mobile-menu-langs" id="mobilePageLangs" data-mobile-lang-panel>
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn active" data-lang="lv">LV</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+      <nav class="mobile-menu-links" aria-label="Mobile navigation">
+        <a class="pill" href="index.html#services" data-i18n="nav_services" data-skip-loader="true">Что я делаю?</a>
+        <a class="pill" href="index.html#works" data-i18n="nav_works" data-skip-loader="true">Работы</a>
+        <a class="pill" href="merch.html" data-i18n="nav_merch" data-skip-loader="true">Мерч</a>
+        <a class="pill" href="index.html#contact" data-i18n="nav_contact" data-skip-loader="true">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="contact-page-shell reveal reveal-up">
+      <div class="contact-layout contact-layout-map">
+        <div class="form-wrap">
+          <div class="form-box form-card">
+            <h1 class="contact-title" data-i18n="contact_title">Напиши мне</h1>
+            <p class="contact-sub" data-i18n="contact_sub">Если хочешь обсудить съёмку, монтаж, контент или сотрудничество — отправь сообщение, и оно придёт мне на email.</p>
+            <div class="contact-meta">
+              <a class="contact-meta-item" href="tel:+37128807591">
+                <span class="contact-meta-label" data-i18n="contact_phone_label">Телефон</span>
+                <strong>+371 28807591</strong>
+              </a>
+              <a class="contact-meta-item" href="https://instagram.com/alekseymedia.lv" target="_blank" rel="noreferrer">
+                <span class="contact-meta-label" data-i18n="contact_instagram_label">Instagram</span>
+                <strong>@alekseymedia.lv</strong>
+              </a>
+            </div>
+
+            <form action="https://formspree.io/f/mzdkwwde" method="post" data-formspree>
+              <input type="hidden" name="_subject" value="New message from ALEKSEYMEDIA website" />
+              <div class="row">
+                <div class="field">
+                  <label data-i18n="form_first_name">First name</label>
+                  <input type="text" name="first_name" autocomplete="given-name" data-i18n-placeholder="ph_first_name" placeholder="Aleksejs" required />
+                </div>
+                <div class="field">
+                  <label data-i18n="form_last_name">Last name</label>
+                  <input type="text" name="last_name" autocomplete="family-name" data-i18n-placeholder="ph_last_name" placeholder="Iļņickis" required />
+                </div>
+              </div>
+
+              <div class="field">
+                <label data-i18n="form_email">Email</label>
+                <input type="email" name="email" autocomplete="email" data-i18n-placeholder="ph_email" placeholder="your@email.com" required />
+              </div>
+
+              <div class="field">
+                <label data-i18n="form_message">Message</label>
+                <textarea name="message" data-i18n-placeholder="ph_message" placeholder="Hi Aleksejs..." required></textarea>
+              </div>
+
+              <div class="contact-form-actions">
+                <button class="submit" type="submit" data-i18n="contact_submit">Отправить сообщение →</button>
+                <a class="pill contact-back-btn" href="index.html" data-i18n="contact_back" data-skip-loader="true">← Назад</a>
+              </div>
+              <p class="form-status" data-form-status aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+
+        <aside class="contact-map-wrap">
+          <div class="contact-map-card is-loading" data-contact-map-card>
+            <div class="contact-map-head">
+              <div class="section-kicker orange" data-i18n="contact_location_label">Локация</div>
+              <h2 class="contact-map-title" data-i18n="contact_map_title">Saldus, Latvia</h2>
+              <a class="contact-map-link" href="https://www.google.com/maps/search/?api=1&query=Saldus%2C%20Latvia" target="_blank" rel="noreferrer" data-i18n="contact_map_link">Открыть карту ↗</a>
+            </div>
+            <div class="contact-map-frame" data-contact-map-frame>
+              <iframe
+                data-contact-map-embed
+                title="Saldus map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://maps.google.com/maps?q=Saldus%2C%20Latvia&z=13&output=embed">
+              </iframe>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="footer-note reveal reveal-fade">
+      <span class="footer-note-item" data-i18n="footer_copyright">© 2026 Aleksejs Iļņickis</span>
+      <span class="footer-note-center">
+        <span class="footer-brand-lock">ALEKSEY<span class="footer-green">MEDIA</span></span>
+        <span class="footer-legal" data-i18n="footer_protected">Protected by copyright</span>
+        <span class="footer-owner" data-i18n="footer_copyright">© 2026 Aleksejs Iļņickis</span>
+      </span>
+      <span class="footer-note-item" data-i18n="footer_rights">All rights reserved</span>
+    </div>
+  </main>
+
+  <script src="script.js?v=20260425-03"></script>
+</body>
+</html>

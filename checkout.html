@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlekseyMedia | Checkout</title>
+  <style>
+    html, body { background: #120f0c; color: #f4eadb; }
+    body { margin: 0; }
+  </style>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="IMAGES/Favicon/favicon-edited-blue-rounded.png" />
+  <meta name="store-api-base" content="/api" />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700;800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260425-02" />
+</head>
+<body class="preloading order-page-view store-checkout-page-view">
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="ALEKSEYMEDIA" data-skip-loader="true">
+        <span class="brand-white">ALEKSEY</span><span class="brand-green">MEDIA</span>
+      </a>
+
+      <div class="nav-center">
+        <div class="page-indicator">
+          <span class="page-indicator-line"></span>
+          <span data-i18n="order_nav_label">Pasūtījums</span>
+          <span class="page-indicator-line"></span>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn active" data-lang="lv">LV</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+
+      <button class="pill mobile-menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobilePageMenu" data-mobile-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="wrap mobile-menu-panel" id="mobilePageMenu" data-mobile-menu hidden>
+      <a class="mobile-menu-brand" href="index.html" aria-label="ALEKSEYMEDIA" data-skip-loader="true">
+        <span class="brand-white">ALEKSEY</span><span class="brand-green">MEDIA</span>
+      </a>
+      <div class="mobile-menu-langs" id="mobilePageLangs" data-mobile-lang-panel>
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn active" data-lang="lv">LV</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+      <nav class="mobile-menu-links" aria-label="Mobile navigation">
+        <a class="pill" href="index.html#services" data-i18n="nav_services" data-skip-loader="true">Ko es daru?</a>
+        <a class="pill" href="index.html#works" data-i18n="nav_works" data-skip-loader="true">Darbi</a>
+        <a class="pill" href="merch.html" data-i18n="nav_merch" data-skip-loader="true">Merčs</a>
+        <a class="pill" href="index.html#contact" data-i18n="nav_contact" data-skip-loader="true">Kontakti</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="order-shell reveal reveal-up">
+      <div class="store-checkout-layout">
+        <section class="order-payment-card form-card store-checkout-form-panel">
+          <div class="section-kicker orange" data-store-i18n="checkout_kicker">Stripe checkout</div>
+          <h1 class="contact-title order-form-title" data-store-i18n="checkout_title">Aizpildi datus un apmaksā caur Stripe.</h1>
+          <p class="contact-sub order-form-sub" data-store-i18n="checkout_copy">Pēc veiksmīgas apmaksas pasūtījums automātiski tiks nosūtīts uz Printify.</p>
+
+          <form id="storeCheckoutForm">
+            <div class="store-checkout-section-title" data-store-i18n="checkout_customer">Kontakti</div>
+            <div class="row">
+              <div class="field">
+                <label data-store-i18n="checkout_first_name">Vārds</label>
+                <input type="text" name="first_name" placeholder="Aleksejs" required />
+              </div>
+              <div class="field">
+                <label data-store-i18n="checkout_last_name">Uzvārds</label>
+                <input type="text" name="last_name" placeholder="Iļņickis" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label data-store-i18n="checkout_email">E-pasts</label>
+                <input type="email" name="email" placeholder="your@email.com" required />
+              </div>
+              <div class="field">
+                <label data-store-i18n="checkout_phone">Tālrunis</label>
+                <input type="tel" name="phone" placeholder="28807591" required />
+              </div>
+            </div>
+
+            <div class="store-checkout-section-title" data-store-i18n="checkout_shipping">Piegādes adrese</div>
+            <div class="row">
+              <div class="field">
+                <label data-store-i18n="checkout_country">Valsts kods</label>
+                <input id="checkoutCountry" type="text" name="country" maxlength="2" placeholder="LV" required />
+              </div>
+              <div class="field">
+                <label data-store-i18n="checkout_region">Reģions</label>
+                <input type="text" name="region" placeholder="Kurzeme" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label data-store-i18n="checkout_city">Pilsēta</label>
+                <input type="text" name="city" placeholder="Saldus" required />
+              </div>
+              <div class="field">
+                <label data-store-i18n="checkout_zip">Pasta indekss</label>
+                <input type="text" name="zip" placeholder="LV-3801" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label data-store-i18n="checkout_address1">Adrese</label>
+              <input type="text" name="address1" placeholder="Rīgas iela 12" required />
+            </div>
+
+            <div class="field">
+              <label data-store-i18n="checkout_address2">Dzīvoklis / papildus adrese</label>
+              <input type="text" name="address2" placeholder="8" />
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label data-store-i18n="product_quantity">Daudzums</label>
+                <input id="checkoutQty" type="number" min="1" max="10" value="1" required />
+              </div>
+              <div class="field">
+                <label data-store-i18n="checkout_promo">Promokods</label>
+                <input id="checkoutPromoCode" type="text" placeholder="DRIP15" />
+              </div>
+            </div>
+
+            <p class="store-checkout-hint" data-store-i18n="checkout_promo_hint">Ja tev ir promokods, ievadi to un saņem atlaidi!</p>
+
+            <section class="payment-breakdown store-checkout-breakdown">
+              <div class="payment-breakdown-head">
+                <strong data-i18n="order_payment_breakdown_title">Kas ir iekļauts summā</strong>
+                <div class="availability-badge payment-warning-badge" data-i18n="order_delivery_warning">Piegāde aizņem vismaz 3 nedēļas, bet var būt ātrāk</div>
+              </div>
+
+              <div class="payment-breakdown-row">
+                <span id="checkoutBreakdownProductName">Product</span>
+                <strong id="checkoutBreakdownProductAmount">—</strong>
+              </div>
+
+              <div class="payment-breakdown-row">
+                <span><span data-i18n="order_payment_delivery">Piegāde</span> • <span id="checkoutBreakdownDeliveryMethod">Standard</span></span>
+                <strong id="checkoutBreakdownShippingAmount">—</strong>
+              </div>
+
+              <div class="payment-breakdown-row payment-breakdown-row-discount" id="checkoutBreakdownDiscountRow" hidden>
+                <span><span data-i18n="order_discount_label">Atlaide</span> • <span id="checkoutBreakdownDiscountCode"></span></span>
+                <strong id="checkoutBreakdownDiscountAmount">—</strong>
+              </div>
+
+              <div class="payment-breakdown-row is-total">
+                <span data-i18n="order_payment_total">Kopā</span>
+                <strong id="checkoutBreakdownTotalAmount">—</strong>
+              </div>
+            </section>
+
+            <div class="payment-method-grid store-legacy-payment-grid">
+              <button class="payment-method-card payment-method-card-swedbank is-unavailable" type="button" data-store-visual-payment="swedbank">
+                <span class="payment-method-top">
+                  <span class="payment-brand-pill">Swedbank</span>
+                  <span class="payment-brand-logo payment-brand-logo-swedbank" aria-hidden="true">
+                    <img class="payment-brand-logo-img" src="https://raw.githubusercontent.com/alekseymediatype/AlekseyMedia/main/IMAGES/PAYMENTS/swedbank.png" alt="" />
+                  </span>
+                </span>
+                <span class="availability-badge is-unavailable payment-method-status" data-i18n="order_payment_unavailable">Nav pieejams</span>
+                <span class="payment-method-copy" data-i18n="order_payment_swedbank_disabled_copy">Šī apmaksas metode šobrīd nestrādā. Izvēlies citu apmaksas veidu zemāk.</span>
+                <span class="payment-method-cta" data-i18n="order_payment_unavailable">Nav pieejams</span>
+              </button>
+
+              <button class="payment-method-card payment-method-card-paypal is-paypal" type="button" data-store-visual-payment="paypal">
+                <span class="payment-method-top">
+                  <span class="payment-brand-pill">PayPal</span>
+                  <span class="payment-brand-logo payment-brand-logo-paypal" aria-hidden="true">P</span>
+                </span>
+                <span class="payment-method-copy" data-i18n="order_payment_paypal_copy">Pēc pasūtījuma apstiprināšanas uzreiz atvērsies PayPal lapa ar pilno summu.</span>
+                <span class="payment-method-cta" data-i18n="order_paypal">Apmaksāt ar PayPal ↗</span>
+              </button>
+
+              <button class="payment-method-card payment-method-card-revolut" type="button" data-store-visual-payment="revolut">
+                <span class="payment-method-top">
+                  <span class="payment-brand-pill">Revolut</span>
+                  <span class="payment-brand-logo payment-brand-logo-revolut" aria-hidden="true">
+                    <img class="payment-brand-logo-img" src="https://raw.githubusercontent.com/alekseymediatype/AlekseyMedia/main/IMAGES/PAYMENTS/revolut.png" alt="" />
+                  </span>
+                </span>
+                <span class="payment-method-copy" data-i18n="order_payment_revolut_copy">Izvēlies Revolut, un es uzreiz sazināšos ar tevi par apmaksu uz karti vai caur Revolut saiti.</span>
+                <span class="payment-method-cta" data-i18n="order_payment_revolut_btn">Izvēlēties Revolut</span>
+              </button>
+
+              <button class="payment-method-card payment-method-card-bank" type="button" data-store-visual-payment="bank">
+                <span class="payment-method-top">
+                  <span class="payment-brand-pill" data-i18n="order_payment_bank_name">Bankas pārskaitījums</span>
+                  <span class="payment-brand-logo payment-brand-logo-bank" aria-hidden="true">€</span>
+                </span>
+                <span class="payment-method-copy" data-i18n-html="order_payment_bank_copy">Izvēlies pārskaitījumu, un pēc pasūtījuma noformēšanas zemāk parādīsies rekvizīti apmaksai. Strādā visas ES bankas, piemēram, <span class="bank-brand bank-brand-swedbank">Swedbank</span>, <span class="bank-brand bank-brand-seb">SEB</span>, <span class="bank-brand bank-brand-citadele">Citadele</span> un citas.</span>
+                <span class="payment-method-cta" data-i18n="order_payment_bank_btn">Izvēlēties pārskaitījumu</span>
+              </button>
+            </div>
+
+            <section class="payment-bank-details is-hidden" id="storeVisualBankDetails" aria-live="polite">
+              <strong class="payment-bank-details-title" data-i18n="order_bank_details_title">Pārskaitījuma rekvizīti</strong>
+              <div class="payment-bank-details-row">
+                <div class="payment-bank-details-copy">
+                  <span data-i18n="order_bank_details_iban">Konts</span>
+                  <strong>LV08HABA0551049036283</strong>
+                </div>
+                <button class="pill payment-copy-btn" type="button" data-copy-text="LV08HABA0551049036283">Kopēt</button>
+              </div>
+              <div class="payment-bank-details-row">
+                <div class="payment-bank-details-copy">
+                  <span data-i18n="order_bank_details_name">Vārds un uzvārds</span>
+                  <strong>ALEKSEJS ILNICKIS</strong>
+                </div>
+                <button class="pill payment-copy-btn" type="button" data-copy-text="ALEKSEJS ILNICKIS">Kopēt</button>
+              </div>
+            </section>
+
+            <div class="contact-form-actions">
+              <button class="submit" id="storeCheckoutSubmit" type="submit" data-store-i18n="checkout_submit">Apmaksāt ar Stripe ↗</button>
+            </div>
+
+            <p class="form-status" id="storeCheckoutStatus" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <aside class="form-card store-checkout-summary-panel order-summary-card">
+          <div class="payment-cart-heading" data-i18n="order_cart_title">Tavs grozs</div>
+          <div class="availability-badge" data-i18n="merch_available">Pieejams</div>
+          <div class="order-summary-image-frame is-loading">
+            <img class="store-checkout-summary-image order-summary-image" id="checkoutItemImage" alt="" />
+          </div>
+          <div class="store-checkout-summary-copy order-summary-copy">
+            <div class="cap-item-type" data-i18n="merch_item_type">Produkts</div>
+            <strong class="order-title" id="checkoutItemName">Item</strong>
+            <div class="order-price" id="checkoutSummaryPriceTop">—</div>
+            <span class="order-summary-meta" id="checkoutItemMeta"></span>
+          </div>
+
+          <div class="payment-side-meta form-card">
+            <div class="payment-cart-list">
+              <div class="payment-cart-row payment-cart-row-item">
+                <div class="payment-cart-copy">
+                  <span class="payment-cart-row-title" data-store-i18n="checkout_subtotal">Prece</span>
+                  <strong id="checkoutSummaryItemName">Item</strong>
+                  <small id="checkoutSummaryItemMeta"></small>
+                </div>
+                <strong class="payment-cart-row-price" id="checkoutSubtotalAmount">—</strong>
+              </div>
+              <div class="payment-cart-row">
+                <div class="payment-cart-copy">
+                  <span class="payment-cart-row-title" data-i18n="order_payment_delivery">Piegāde</span>
+                  <small id="checkoutSummaryDeliveryMethod">Standard</small>
+                </div>
+                <strong class="payment-cart-row-price" id="checkoutShippingAmount">—</strong>
+              </div>
+              <div class="payment-cart-row" id="checkoutDiscountRow" hidden>
+                <div class="payment-cart-copy">
+                  <span class="payment-cart-row-title" data-i18n="order_discount_label">Atlaide</span>
+                  <small id="checkoutDiscountCode"></small>
+                </div>
+                <strong class="payment-cart-row-price" id="checkoutDiscountAmount">—</strong>
+              </div>
+            </div>
+
+            <div class="payment-summary-total">
+              <span data-i18n="order_payment_total">Kopā</span>
+              <strong id="checkoutTotalAmount">—</strong>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js?v=20260425-03"></script>
+  <script src="storefront.js?v=20260416-8"></script>
+</body>
+</html>

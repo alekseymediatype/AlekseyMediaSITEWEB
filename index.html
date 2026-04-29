@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlekseyMedia</title>
+  <style>
+    html, body { background: #120f0c; color: #f4eadb; }
+    body { margin: 0; }
+  </style>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    if (sessionStorage.getItem("alekseymedia_skip_page_animations") === "1") {
+      document.documentElement.classList.add("skip-page-animations");
+      sessionStorage.removeItem("alekseymedia_skip_page_animations");
+    }
+    if (sessionStorage.getItem("alekseymedia_skip_loader") === "1") {
+      document.documentElement.classList.add("skip-loader");
+      sessionStorage.removeItem("alekseymedia_skip_loader");
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="IMAGES/Favicon/favicon-edited-blue-rounded.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700;800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260429-05" />
+</head>
+<body class="preloading home-page-view">
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <canvas class="loader-shader-bg" id="loaderShaderBg" aria-hidden="true"></canvas>
+    <div class="loader-inner">
+      <div class="loader-brand"><span class="loader-white">ALEKSEY</span><span class="loader-green">MEDIA</span></div>
+      <div class="loader-line"></div>
+    </div>
+  </div>
+
+  <canvas id="shader-bg" aria-hidden="true"></canvas>
+
+  
+
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="ALEKSEYMEDIA">
+        <span class="brand-white">ALEKSEY</span><span class="brand-green">MEDIA</span>
+      </a>
+
+      <nav class="nav-center">
+        <a class="pill" href="#services" data-i18n="nav_services">Что я делаю?</a>
+        <a class="pill" href="#works" data-i18n="nav_works">Работы</a>
+        <a class="pill" href="#merch" data-i18n="nav_merch">Мерч</a>
+        <a class="pill" href="#contact" data-i18n="nav_contact">Контакты</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn active" data-lang="lv">LV</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+
+      <button class="pill mobile-menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="homeMobileMenu" data-mobile-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="wrap mobile-menu-panel" id="homeMobileMenu" data-mobile-menu hidden>
+      <a class="mobile-menu-brand" href="#top" aria-label="ALEKSEYMEDIA">
+        <span class="brand-white">ALEKSEY</span><span class="brand-green">MEDIA</span>
+      </a>
+
+      <div class="mobile-menu-langs" id="homeMobileLangs" data-mobile-lang-panel>
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn active" data-lang="lv">LV</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+      <nav class="mobile-menu-links" aria-label="Mobile navigation">
+        <a class="pill" href="#services" data-i18n="nav_services">Что я делаю?</a>
+        <a class="pill" href="#works" data-i18n="nav_works">Работы</a>
+        <a class="pill" href="#merch" data-i18n="nav_merch">Мерч</a>
+        <a class="pill" href="#contact" data-i18n="nav_contact">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap" id="top">
+    <div class="hero-stage">
+    <section class="hero reveal reveal-up">
+      <div class="hero-grid">
+        <div class="hero-copy-col">
+          <div class="eyebrow" data-i18n="hero_eyebrow">PHOTOGRAPHER / VIDEOGRAPHER / CONTENTMAKER</div>
+          <h1>
+            <span data-i18n="hero_line1">Снимаю так,</span>
+            <span class="accent" data-i18n="hero_line2">чтобы тебя</span>
+            <span data-i18n="hero_line3">заметили.</span>
+          </h1>
+          <p class="hero-copy" data-i18n="hero_copy">
+            Я — Aleksejs Iļņickis. Создаю контент, который выглядит смело, двигается быстро и чувствуется как бренд, а не просто ещё одно видео в ленте.
+          </p>
+          <div class="hero-actions">
+            <a class="btn secondary" href="#works" data-i18n="hero_btn_2">Открыть портфолио</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="frame">
+            <div class="frame-top">
+              <span class="frame-label" data-i18n="frame_top_left">creative cuts / reels / campaign visuals</span>
+              <span class="frame-year">2026</span>
+            </div>
+
+            <div class="big-stamp">ALEKSEY <span>MEDIA</span></div>
+
+            <div class="stats">
+              <div class="stat">
+                <strong>01</strong>
+                <span data-i18n="stat_1">видео для брендов и личного бренда</span>
+              </div>
+              <div class="stat">
+                <strong>02</strong>
+                <span data-i18n="stat_2">монтаж reels, shorts и promo</span>
+              </div>
+              <div class="stat">
+                <strong>03</strong>
+                <span data-i18n="stat_3">съёмка с сильной подачей</span>
+              </div>
+              <div class="stat">
+                <strong>04</strong>
+                <span data-i18n="stat_4">визуальный стиль без шаблонов</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker reveal reveal-fade">
+      <div class="ticker-track">PHOTOGRAPHY &nbsp; — &nbsp; REELS &amp; CONTENT &nbsp; — &nbsp; SALDUS, LATVIA &nbsp; — &nbsp; LATVIA, RIGA &nbsp; — &nbsp; I WORK ALL OVER LATVIA &nbsp; — &nbsp; @ALEKSEYMEDIA.LV &nbsp; — &nbsp; VIDEOGRAPHY &nbsp; — &nbsp; PHOTOGRAPHY &nbsp; — &nbsp; REELS &amp; CONTENT &nbsp; — &nbsp; SALDUS, LATVIA &nbsp; — &nbsp; LATVIA, RIGA &nbsp; — &nbsp; I WORK ALL OVER LATVIA &nbsp; — &nbsp; @ALEKSEYMEDIA.LV &nbsp; — &nbsp; VIDEOGRAPHY &nbsp; — &nbsp; PHOTOGRAPHY &nbsp; — &nbsp; REELS &amp; CONTENT &nbsp; — &nbsp;</div>
+    </div>
+    </div>
+
+    <section id="services" class="reveal">
+      <div class="services">
+        <div>
+          <div class="section-kicker" data-i18n="services_kicker">Что я делаю</div>
+          <h2 class="section-title" data-i18n="services_title">Контент, который не теряется в ленте.</h2>
+          <p class="lead services-lead" data-i18n="services_copy">
+            Я снимаю, монтирую и упаковываю визуал так, чтобы страница выглядела как бренд, а не как случайный набор постов.
+          </p>
+          <a class="btn primary services-cta" href="https://instagram.com/alekseymedia.lv" target="_blank" rel="noreferrer" data-i18n="hero_btn_1">alekseymedia.lv</a>
+        </div>
+
+        <div>
+          <div class="service-list">
+            <div class="service">
+              <b>01</b>
+              <p data-i18n="service_1">Съёмка контента для брендов, личных проектов и визуальных запусков.</p>
+            </div>
+            <div class="service">
+              <b>02</b>
+              <p data-i18n="service_2">Монтаж видео, reels и коротких форматов с энергией и темпом.</p>
+            </div>
+            <div class="service">
+              <b>03</b>
+              <p data-i18n="service_3">Упаковка визуального стиля, чтобы страница выглядела как бренд.</p>
+            </div>
+            <div class="service">
+              <b>04</b>
+              <p data-i18n="service_4">Креативная подача для соцсетей, рекламы и имиджевого контента.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="works" class="reveal reveal-up">
+      <div class="works-head">
+        <div>
+          <div class="section-kicker" data-i18n="works_kicker">Работы</div>
+          <h2 class="section-title" data-i18n="works_title">Работы, которые не теряются в ленте.</h2>
+        </div>
+      </div>
+
+      <div class="works-showcase">
+        <div class="works">
+          <article class="work work-gallery-card" data-gallery-id="edijs-naumanis" data-work-key="work_1" tabindex="0" role="button" aria-label="Open Edijs Naumanis gallery">
+            <small data-i18n="work_1_label">Работа 1</small>
+            <div>
+              <h3 data-i18n="work_1_title">Edijs Naumanis</h3>
+              <p class="work-meta" data-i18n="work_1_copy">Fitnesa treneris</p>
+              <span class="work-gallery-hint" data-i18n="work_gallery_hint">Открыть галерею ↗</span>
+            </div>
+          </article>
+
+          <article class="work work-gallery-card" data-gallery-id="first-september" data-work-key="work_2" tabindex="0" role="button" aria-label="Open 1 SEPTEMBER gallery">
+            <small data-i18n="work_2_label">Работа 2</small>
+            <div>
+              <h3 data-i18n="work_2_title">1 SEPTEMBER</h3>
+              <p class="work-meta" data-i18n="work_2_copy">Фотосет 1 сентября</p>
+              <span class="work-gallery-hint" data-i18n="work_gallery_hint">Открыть галерею ↗</span>
+            </div>
+          </article>
+
+          <article class="work work-gallery-card" data-gallery-id="gilera-runner" data-work-key="work_3" tabindex="0" role="button" aria-label="Open Gilera Runner gallery">
+            <small data-i18n="work_3_label">Работа 3</small>
+            <div>
+              <h3 data-i18n="work_3_title">Gilera Runner</h3>
+              <p class="work-meta" data-i18n="work_3_copy">Street detail set</p>
+              <span class="work-gallery-hint" data-i18n="work_gallery_hint">Открыть галерею ↗</span>
+            </div>
+          </article>
+
+          <article class="work work-gallery-card" data-gallery-id="gym-workout" data-work-key="work_5" tabindex="0" role="button" aria-label="Open Gym Workout gallery">
+            <small data-i18n="work_5_label">Работа 5</small>
+            <div>
+              <h3 data-i18n="work_5_title">GYM WORKOUT</h3>
+              <p class="work-meta" data-i18n="work_5_copy">Тренировочный фотосет</p>
+              <span class="work-gallery-hint" data-i18n="work_gallery_hint">Открыть галерею ↗</span>
+            </div>
+          </article>
+
+          <article class="work work-gallery-card" data-gallery-id="basketball" data-work-key="work_4" tabindex="0" role="button" aria-label="Open Basketball gallery">
+            <small data-i18n="work_4_label">Работа 4</small>
+            <div>
+              <h3 data-i18n="work_4_title">BASKETBALL</h3>
+              <p class="work-meta" data-i18n="work_4_copy">Баскетбольный фотосет</p>
+              <span class="work-gallery-hint" data-i18n="work_gallery_hint">Открыть галерею ↗</span>
+            </div>
+          </article>
+
+          <article class="work work-gallery-card" data-gallery-id="hockey" data-work-key="work_6" tabindex="0" role="button" aria-label="Open Hockey gallery">
+            <small data-i18n="work_6_label">Работа 6</small>
+            <div>
+              <h3 data-i18n="work_6_title">HOCKEY</h3>
+              <p class="work-meta" data-i18n="work_6_copy">Игровой фотосет</p>
+              <span class="work-gallery-hint" data-i18n="work_gallery_hint">Открыть галерею ↗</span>
+            </div>
+          </article>
+        </div>
+
+        <aside class="works-detail-panel" id="worksDetailPanel" aria-live="polite">
+          <div class="section-kicker orange" data-i18n="works_panel_kicker">Current project</div>
+          <div class="works-detail-case" id="worksDetailCase" data-i18n="work_1_label">Darbs 1</div>
+          <h3 class="works-detail-title" id="worksDetailTitle" data-i18n="work_1_title">Edijs Naumanis</h3>
+          <p class="works-detail-role" id="worksDetailRole" data-i18n="work_1_copy">Fitnesa treneris</p>
+          <p class="works-detail-copy" id="worksDetailCopy" data-i18n="work_1_detail">Personīgais vizuālais saturs fitnesa trenerim Edijam Naumanim: pārliecinoši portreti, kontrastaina gaisma un kadri, kas strādā personīgajam zīmolam un sociālajiem tīkliem.</p>
+          <div class="works-detail-actions" id="worksDetailActions">
+            <button class="works-detail-action-link is-gallery" id="worksDetailOpenGallery" type="button" data-i18n="work_gallery_hint">Открыть галерею ↗</button>
+            <a class="works-detail-action-link is-instagram" id="worksDetailInstagram" href="https://www.instagram.com/ednauman/" target="_blank" rel="noreferrer">Instagram @ednauman ↗</a>
+          </div>
+        </aside>
+      </div>
+
+      <div class="gallery-modal" id="workGalleryModal" hidden aria-hidden="true">
+        <div class="gallery-backdrop" data-gallery-close></div>
+        <div class="gallery-shell">
+          <div class="gallery-dialog" role="dialog" aria-modal="true" aria-labelledby="workGalleryTitle">
+            <button class="gallery-close" type="button" data-gallery-close aria-label="Close gallery">×</button>
+
+            <div class="gallery-stage">
+              <button class="gallery-nav" type="button" data-gallery-prev aria-label="Previous image">←</button>
+              <figure class="gallery-figure">
+                <div class="gallery-media-frame" id="workGalleryMediaFrame">
+                  <img class="gallery-image" id="workGalleryImage" alt="" />
+                </div>
+                <figcaption class="gallery-caption">
+                  <div class="gallery-caption-top">
+                    <div>
+                      <div class="section-kicker orange" id="workGalleryCase">Case 01</div>
+                      <h3 class="gallery-title" id="workGalleryTitle">Edijs Naumanis</h3>
+                      <p class="gallery-subtitle" id="workGallerySubtitle">Fitnesa treneris</p>
+                    </div>
+                    <div class="gallery-counter" id="workGalleryCounter">1 / 1</div>
+                  </div>
+                </figcaption>
+              </figure>
+              <button class="gallery-nav" type="button" data-gallery-next aria-label="Next image">→</button>
+            </div>
+
+            <div class="gallery-strip" id="workGalleryStrip"></div>
+
+            <section class="gallery-project-info" id="galleryProjectInfo">
+              <button class="gallery-project-info-toggle" id="galleryProjectInfoToggle" type="button" aria-expanded="false" aria-controls="galleryProjectInfoContent">
+                <span class="gallery-project-info-toggle-copy">
+                  <span class="gallery-project-info-kicker" data-i18n="works_mobile_info">Информация о работе</span>
+                  <strong class="gallery-project-info-toggle-title" id="galleryProjectInfoToggleTitle">Edijs Naumanis</strong>
+                </span>
+                <span class="gallery-project-info-toggle-icon" aria-hidden="true">+</span>
+              </button>
+
+              <div class="gallery-project-info-content" id="galleryProjectInfoContent" hidden>
+                <div class="works-detail-case" id="galleryProjectInfoCase">Darbs 1</div>
+                <h3 class="works-detail-title gallery-project-info-title" id="galleryProjectInfoTitle">Edijs Naumanis</h3>
+                <p class="works-detail-role" id="galleryProjectInfoRole">Fitnesa treneris</p>
+                <p class="works-detail-copy gallery-project-info-copy" id="galleryProjectInfoCopy">Personīgais vizuālais saturs fitnesa trenerim Edijam Naumanim: pārliecinoši portreti, kontrastaina gaisma un kadri, kas strādā personīgajam zīmolam un sociālajiem tīkliem.</p>
+                <div class="works-detail-actions gallery-project-info-actions">
+                  <a class="works-detail-action-link is-instagram" id="galleryProjectInfoAction" href="https://www.instagram.com/ednauman/" target="_blank" rel="noreferrer">Instagram @ednauman ↗</a>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <aside class="gallery-desktop-info" id="galleryDesktopInfo" aria-label="Work information">
+            <div class="gallery-project-info-kicker" data-i18n="works_mobile_info">Информация о работе</div>
+            <div class="works-detail-case" id="galleryDesktopInfoCase">Darbs 1</div>
+            <h3 class="works-detail-title gallery-project-info-title" id="galleryDesktopInfoTitle">Edijs Naumanis</h3>
+            <p class="works-detail-role" id="galleryDesktopInfoRole">Fitnesa treneris</p>
+            <p class="works-detail-copy gallery-project-info-copy" id="galleryDesktopInfoCopy">Personīgais vizuālais saturs fitnesa trenerim Edijam Naumanim: pārliecinoši portreti, kontrastaina gaisma un kadri, kas strādā personīgajam zīmolam un sociālajiem tīkliem.</p>
+            <div class="works-detail-actions gallery-project-info-actions">
+              <a class="works-detail-action-link is-instagram" id="galleryDesktopInfoAction" href="https://www.instagram.com/ednauman/" target="_blank" rel="noreferrer">Instagram @ednauman ↗</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="works-more reveal reveal-up" id="worksMore">
+      <button class="btn secondary works-more-toggle" type="button" id="worksMoreToggle" aria-expanded="false" aria-controls="worksArchiveModal">
+        Посмотреть больше работ
+      </button>
+
+      <div class="gallery-modal works-archive-modal" id="worksArchiveModal" hidden aria-hidden="true">
+        <div class="gallery-backdrop" data-works-archive-close></div>
+        <div class="gallery-dialog works-archive-dialog" role="dialog" aria-modal="true" aria-labelledby="worksArchiveTitle">
+          <button class="gallery-close" type="button" data-works-archive-close aria-label="Close archive">×</button>
+
+          <div class="works-archive">
+            <div class="works-archive-head">
+              <div>
+                <div class="section-kicker" data-i18n="works_archive_kicker">Все работы</div>
+                <h3 class="gallery-title" id="worksArchiveTitle" data-i18n="works_archive_title">Больше работ</h3>
+              </div>
+              <p class="works-archive-copy" data-i18n="works_archive_copy">Тут больше работ. Больше можно узнать в Instagram: alekseymedia.lv.</p>
+            </div>
+
+            <div class="works-archive-scroll">
+              <div class="works-archive-list" id="worksArchiveList">
+                <article class="work work-gallery-card works-archive-card" data-gallery-id="peugeot-speedfight-3" tabindex="0" role="button" aria-label="Open Peugeot Speedfight 3 gallery">
+                  <small data-i18n="archive_work_1_label">Работа 7</small>
+                  <div>
+                    <h3 class="work-title-speedfight">PEUGEOT SPEEDFIGHT <span class="work-title-accent">3</span></h3>
+                    <p class="work-meta" data-i18n="archive_work_1_copy">Ночной фотосет</p>
+                    <span class="work-gallery-hint" data-i18n="work_gallery_hint">Открыть галерею ↗</span>
+                  </div>
+                </article>
+
+                <article class="work work-gallery-card works-archive-card" data-gallery-id="dance" tabindex="0" role="button" aria-label="Open Dance gallery">
+                  <small data-i18n="archive_work_2_label">Работа 8</small>
+                  <div>
+                    <h3 data-i18n="archive_work_2_title">DANCE</h3>
+                    <p class="work-meta" data-i18n="archive_work_2_copy">Танцевальный фотосет</p>
+                    <span class="work-gallery-hint" data-i18n="work_gallery_hint">Открыть галерею ↗</span>
+                  </div>
+                </article>
+
+                <a class="works-archive-instagram" href="https://instagram.com/alekseymedia.lv" target="_blank" rel="noreferrer">
+                  <div class="works-archive-instagram-kicker" data-i18n="works_archive_instagram_kicker">Instagram</div>
+                  <h3 class="works-archive-instagram-title"><span>ALEKSEJS</span><span>ILNICKIS</span></h3>
+                  <p class="works-archive-instagram-copy" data-i18n="works_archive_instagram_copy">Там больше работ, backstage и свежие съёмки.</p>
+                  <span class="works-archive-instagram-btn" data-i18n="works_archive_instagram_btn">Открыть ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="merch" class="reveal reveal-up">
+      <div class="merch">
+        <div class="merch-copy">
+          <div class="section-kicker orange" data-i18n="merch_kicker">Merch</div>
+          <h2 class="section-title dark" data-i18n="merch_title">Мерч как отдельный акцентный блок.</h2>
+          <p data-i18n="merch_copy">
+            Кнопка ведёт прямо на страницу с мерчем. Просто замени ссылку на свою реальную.
+          </p>
+        </div>
+
+        <a class="merch-card" href="merch.html">
+          <div class="section-kicker white" data-i18n="merch_card_kicker">Click to open merch</div>
+          <div class="shop-word">ALEKSEY<br>STYLE</div>
+          <div class="merch-bottom">
+            <div class="merch-text" data-i18n="merch_card_copy">Нажимаешь — и сразу переходишь на мерч.</div>
+            <div class="merch-card-btn" data-i18n="merch_card_btn">Открыть ↗</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-page-shell reveal reveal-up">
+      <div class="contact-layout contact-layout-map">
+        <div class="form-wrap">
+          <div class="form-box form-card">
+            <h1 class="contact-title" data-i18n="contact_title">Напиши мне</h1>
+            <p class="contact-sub" data-i18n="contact_sub">Если хочешь обсудить съёмку, монтаж, контент или сотрудничество — отправь сообщение, и оно придёт мне на email.</p>
+            <div class="contact-meta">
+              <a class="contact-meta-item" href="tel:+37128807591">
+                <span class="contact-meta-label" data-i18n="contact_phone_label">Телефон</span>
+                <strong>+371 28807591</strong>
+              </a>
+              <a class="contact-meta-item" href="https://instagram.com/alekseymedia.lv" target="_blank" rel="noreferrer">
+                <span class="contact-meta-label" data-i18n="contact_instagram_label">Instagram</span>
+                <strong>@alekseymedia.lv</strong>
+              </a>
+            </div>
+
+            <form action="https://formspree.io/f/mzdkwwde" method="post" data-formspree>
+              <input type="hidden" name="_subject" value="New message from ALEKSEYMEDIA website" />
+              <div class="row">
+                <div class="field">
+                  <label data-i18n="form_first_name">First name</label>
+                  <input type="text" name="first_name" autocomplete="given-name" data-i18n-placeholder="ph_first_name" placeholder="Aleksejs" required />
+                </div>
+                <div class="field">
+                  <label data-i18n="form_last_name">Last name</label>
+                  <input type="text" name="last_name" autocomplete="family-name" data-i18n-placeholder="ph_last_name" placeholder="Iļņickis" required />
+                </div>
+              </div>
+
+              <div class="field">
+                <label data-i18n="form_email">Email</label>
+                <input type="email" name="email" autocomplete="email" data-i18n-placeholder="ph_email" placeholder="your@email.com" required />
+              </div>
+
+              <div class="field">
+                <label data-i18n="form_message">Message</label>
+                <textarea name="message" data-i18n-placeholder="ph_message" placeholder="Hi Aleksejs..." required></textarea>
+              </div>
+
+              <div class="contact-form-actions">
+                <button class="submit" type="submit" data-i18n="contact_submit">Отправить сообщение →</button>
+              </div>
+              <p class="form-status" data-form-status aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+
+        <aside class="contact-map-wrap">
+          <div class="contact-map-card is-loading" data-contact-map-card>
+            <div class="contact-map-head">
+              <div class="section-kicker orange" data-i18n="contact_location_label">Локация</div>
+              <h2 class="contact-map-title" data-i18n="contact_map_title">Saldus, Latvia</h2>
+              <a class="contact-map-link" href="https://www.google.com/maps/search/?api=1&query=Saldus%2C%20Latvia" target="_blank" rel="noreferrer" data-i18n="contact_map_link">Открыть карту ↗</a>
+            </div>
+            <div class="contact-map-frame" data-contact-map-frame>
+              <iframe
+                data-contact-map-embed
+                title="Saldus map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://maps.google.com/maps?q=Saldus%2C%20Latvia&z=13&output=embed">
+              </iframe>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="footer-note reveal reveal-fade">
+      <span class="footer-note-item" data-i18n="footer_copyright">© 2026 Aleksejs Iļņickis</span>
+      <span class="footer-note-center">
+        <span class="footer-brand-lock">ALEKSEY<span class="footer-green">MEDIA</span></span>
+        <span class="footer-legal" data-i18n="footer_protected">Protected by copyright</span>
+        <span class="footer-owner" data-i18n="footer_copyright">© 2026 Aleksejs Iļņickis</span>
+      </span>
+      <span class="footer-note-item" data-i18n="footer_rights">All rights reserved</span>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js?v=20260429-06"></script>
+</body>
+</html>

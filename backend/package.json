@@ -1,0 +1,21 @@
+{
+  "name": "alekseymedia-printify-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "printify:webhooks": "node src/scripts/register-printify-webhooks.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "pg": "^8.13.1",
+    "stripe": "^17.4.0",
+    "zod": "^3.23.8"
+  }
+}

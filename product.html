@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlekseyMedia | Product</title>
+  <style>
+    html, body { background: #120f0c; color: #f4eadb; }
+    body { margin: 0; }
+  </style>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="IMAGES/Favicon/favicon-edited-blue-rounded.png" />
+  <meta name="store-api-base" content="/api" />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700;800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260425-02" />
+</head>
+<body class="preloading merch-page-view store-product-page-view">
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="ALEKSEYMEDIA" data-skip-loader="true">
+        <span class="brand-white">ALEKSEY</span><span class="brand-green">MEDIA</span>
+      </a>
+
+      <div class="nav-center">
+        <div class="page-indicator">
+          <span class="page-indicator-line"></span>
+          <span data-i18n="nav_merch">Merčs</span>
+          <span class="page-indicator-line"></span>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn active" data-lang="lv">LV</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+
+      <button class="pill mobile-menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobilePageMenu" data-mobile-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="wrap mobile-menu-panel" id="mobilePageMenu" data-mobile-menu hidden>
+      <a class="mobile-menu-brand" href="index.html" aria-label="ALEKSEYMEDIA" data-skip-loader="true">
+        <span class="brand-white">ALEKSEY</span><span class="brand-green">MEDIA</span>
+      </a>
+      <div class="mobile-menu-langs" id="mobilePageLangs" data-mobile-lang-panel>
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn active" data-lang="lv">LV</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+      <nav class="mobile-menu-links" aria-label="Mobile navigation">
+        <a class="pill" href="index.html#services" data-i18n="nav_services" data-skip-loader="true">Ko es daru?</a>
+        <a class="pill" href="index.html#works" data-i18n="nav_works" data-skip-loader="true">Darbi</a>
+        <a class="pill" href="merch.html" data-i18n="nav_merch" data-skip-loader="true">Merčs</a>
+        <a class="pill" href="index.html#contact" data-i18n="nav_contact" data-skip-loader="true">Kontakti</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="store-product-shell reveal reveal-up" data-store-product-page>
+      <div class="store-page-back">
+        <a class="pill" href="merch.html" data-skip-loader="true" data-store-i18n="product_back">← Atpakaļ uz merču</a>
+      </div>
+
+      <div class="store-product-layout">
+        <section class="form-card store-product-gallery-panel">
+          <img class="store-product-main-image" id="storeProductMainImage" alt="" />
+          <div class="store-thumb-row" id="storeProductThumbs"></div>
+        </section>
+
+        <section class="form-card store-product-detail-panel">
+          <div class="section-kicker orange" data-store-i18n="product_kicker">Printify produkts</div>
+          <div class="availability-badge" id="storeProductBadge">Pieejams</div>
+          <h1 class="section-title store-product-title" id="storeProductTitle">Product title</h1>
+          <div class="store-product-price" id="storeProductPrice">0,00 €</div>
+          <div class="store-product-variant-meta" id="storeProductVariantMeta"></div>
+          <p class="contact-sub" id="storeProductDescription"></p>
+
+          <div class="store-option-group" id="storeColorGroup" hidden>
+            <div class="store-option-head">
+              <span data-store-i18n="product_color">Krāsa</span>
+            </div>
+            <div class="store-choice-grid" id="storeColorChoices"></div>
+          </div>
+
+          <div class="store-option-group" id="storeSizeGroup" hidden>
+            <div class="store-option-head">
+              <span data-store-i18n="product_size">Izmērs</span>
+            </div>
+            <div class="store-choice-grid" id="storeSizeChoices"></div>
+          </div>
+
+          <div class="store-option-group" id="storeVariantGroup" hidden>
+            <div class="store-option-head">
+              <span data-store-i18n="product_variant">Variants</span>
+            </div>
+            <div class="store-choice-grid" id="storeVariantChoices"></div>
+          </div>
+
+          <div class="store-option-group">
+            <div class="store-option-head">
+              <span data-store-i18n="product_quantity">Daudzums</span>
+            </div>
+            <div class="store-qty-box">
+              <button class="store-qty-btn" id="storeQtyDecrease" type="button">-</button>
+              <div class="store-qty-value" id="storeQtyValue">1</div>
+              <button class="store-qty-btn" id="storeQtyIncrease" type="button">+</button>
+            </div>
+          </div>
+
+          <div class="product-modal-actions store-product-actions">
+            <a class="btn primary" id="storeCheckoutLink" href="checkout.html" data-skip-loader="true" data-store-i18n="product_checkout">Pāriet uz checkout ↗</a>
+            <a class="pill" href="merch.html" data-skip-loader="true" data-store-i18n="product_back">← Atpakaļ uz merču</a>
+          </div>
+
+          <p class="form-status" id="storeProductStatus" aria-live="polite"></p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js?v=20260425-03"></script>
+  <script src="storefront.js"></script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlekseyMedia | Order</title>
+  <style>
+    html, body { background: #120f0c; color: #f4eadb; }
+    body { margin: 0; padding-top: 80px; }
+    .topbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; }
+    .nav { min-height: 88px; }
+  </style>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="IMAGES/Favicon/favicon-edited-blue-rounded.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700;800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260425-02" />
+</head>
+<body class="preloading order-page-view">
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="ALEKSEYMEDIA" data-skip-loader="true">
+        <span class="brand-white">ALEKSEY</span><span class="brand-green">MEDIA</span>
+      </a>
+
+      <div class="nav-center">
+        <div class="page-indicator">
+          <span class="page-indicator-line"></span>
+          <span data-i18n="order_nav_label">Заказ</span>
+          <span class="page-indicator-line"></span>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn active" data-lang="lv">LV</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+
+      <button class="pill mobile-menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobilePageMenu" data-mobile-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="wrap mobile-menu-panel" id="mobilePageMenu" data-mobile-menu hidden>
+      <a class="mobile-menu-brand" href="index.html" aria-label="ALEKSEYMEDIA" data-skip-loader="true">
+        <span class="brand-white">ALEKSEY</span><span class="brand-green">MEDIA</span>
+      </a>
+
+      <div class="mobile-menu-langs" id="mobilePageLangs" data-mobile-lang-panel>
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn active" data-lang="lv">LV</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+      <nav class="mobile-menu-links" aria-label="Mobile navigation">
+        <a class="pill" href="index.html#services" data-i18n="nav_services" data-skip-loader="true">Что я делаю?</a>
+        <a class="pill" href="index.html#works" data-i18n="nav_works" data-skip-loader="true">Работы</a>
+        <a class="pill" href="merch.html" data-i18n="nav_merch" data-skip-loader="true">Мерч</a>
+        <a class="pill" href="index.html#contact" data-i18n="nav_contact" data-skip-loader="true">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="order-shell reveal reveal-up">
+      <form class="order-wizard-layout" action="https://formspree.io/f/mzdkwwde" method="post" data-order-wizard-form>
+        <input type="hidden" name="_subject" value="New merch order from ALEKSEYMEDIA website" />
+        <input type="hidden" name="order_type" value="Merch Order" />
+        <input type="hidden" name="product_name" id="orderHiddenProductName" value="Life is a moment. Don't miss it." />
+        <input type="hidden" name="product_size" id="orderHiddenProductSize" value="" />
+        <input type="hidden" name="product_article" id="orderHiddenProductArticle" value="" />
+        <input type="hidden" name="promo_code" id="orderHiddenPromoCode" value="" />
+        <input type="hidden" name="product_price" id="orderHiddenProductPrice" value="35,79 EUR" />
+        <input type="hidden" name="shipping_price" id="orderHiddenShippingPrice" value="" />
+        <input type="hidden" name="order_total" id="orderHiddenTotal" value="35.79 EUR" />
+        <input type="hidden" name="payment_link" id="orderHiddenPaymentLink" value="https://paypal.me/AlekseyIlnickiyzy/35.79EUR" />
+
+        <div class="order-steps-nav order-steps-nav-wide order-steps-nav-three">
+          <div class="order-step-chip is-active" data-order-chip="1">
+            <span>01</span>
+            <strong data-i18n="order_step_contact">Контакты</strong>
+          </div>
+          <div class="order-step-chip" data-order-chip="2">
+            <span>02</span>
+            <strong data-i18n="order_step_delivery">Доставка</strong>
+          </div>
+          <div class="order-step-chip is-upcoming" data-order-chip="3">
+            <span>03</span>
+            <strong data-i18n="order_step_payment">Оплата</strong>
+          </div>
+        </div>
+
+        <section class="order-step-card form-card" data-order-panel="contact">
+          <div class="section-kicker orange" data-i18n="order_kicker">Order</div>
+          <h2 class="contact-title order-form-title" data-i18n="order_title">Оформить заказ</h2>
+          <p class="contact-sub order-form-sub" data-i18n="order_sub">Оставь свои данные, потом перейди к доставке и отправь заказ. Информация сразу придёт мне на email.</p>
+
+          <div class="row">
+            <div class="field">
+              <label data-i18n="form_first_name">Имя</label>
+              <input type="text" name="first_name" autocomplete="given-name" data-i18n-placeholder="ph_first_name" placeholder="Aleksejs" required />
+            </div>
+            <div class="field">
+              <label data-i18n="form_last_name">Фамилия</label>
+              <input type="text" name="last_name" autocomplete="family-name" data-i18n-placeholder="ph_last_name" placeholder="Iļņickis" required />
+            </div>
+          </div>
+
+          <div class="row order-phone-row">
+            <div class="field order-code-field">
+              <label data-i18n="order_country_code">Код страны</label>
+              <select name="country_code" required>
+                <option value="+371">+371</option>
+                <option value="+370">+370</option>
+                <option value="+372">+372</option>
+                <option value="+358">+358</option>
+                <option value="+46">+46</option>
+                <option value="+47">+47</option>
+                <option value="+49">+49</option>
+                <option value="+44">+44</option>
+                <option value="+48">+48</option>
+                <option value="+1">+1</option>
+              </select>
+            </div>
+            <div class="field">
+              <label data-i18n="order_phone">Номер телефона</label>
+              <input type="tel" name="phone" autocomplete="tel-national" inputmode="numeric" pattern="[0-9]*" data-i18n-placeholder="order_phone_placeholder" placeholder="28807591" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label data-i18n="form_email">Email</label>
+            <input type="email" name="email" autocomplete="email" data-i18n-placeholder="ph_email" placeholder="your@email.com" required />
+          </div>
+
+          <div class="order-step-actions">
+            <button class="btn primary order-next-btn" type="button" data-order-next data-i18n="order_next">Далее →</button>
+          </div>
+        </section>
+
+        <section class="order-step-card form-card is-locked" data-order-panel="delivery" aria-disabled="true">
+          <div class="section-kicker orange" data-i18n="order_delivery_label">Delivery</div>
+          <h2 class="contact-title order-form-title" data-i18n="order_delivery_title">Доставка и адрес</h2>
+          <p class="contact-sub order-form-sub" data-i18n="order_delivery_note">Доставка может занять от 3 недель, иногда быстрее. После отправки заказа я свяжусь с тобой по подтверждению и оплате.</p>
+
+          <div class="field">
+            <label data-i18n="order_delivery_method">Способ доставки</label>
+                <div class="delivery-options">
+                  <label class="delivery-option">
+                    <input type="radio" name="delivery_method" value="OMNIVA" data-price="3.09" required disabled />
+                    <span class="delivery-option-content">
+                      <span class="delivery-option-brand">OMNIVA</span>
+                      <small class="delivery-option-price">3,09 €</small>
+                    </span>
+                    <img class="delivery-option-anim delivery-option-anim-omniva" src="https://raw.githubusercontent.com/alekseymediatype/AlekseyMedia/main/IMAGES/PAYMENTS/Omivas%20busss.png" alt="" />
+                  </label>
+                  <label class="delivery-option">
+                    <input type="radio" name="delivery_method" value="DPD" data-price="2.78" required disabled />
+                    <span class="delivery-option-content">
+                      <span class="delivery-option-brand">DPD</span>
+                      <small class="delivery-option-price">2,78 €</small>
+                    </span>
+                    <img class="delivery-option-anim delivery-option-anim-dpd" src="https://raw.githubusercontent.com/alekseymediatype/AlekseyMedia/main/IMAGES/PAYMENTS/DPD_logo_.png" alt="" />
+                  </label>
+                  <label class="delivery-option">
+                    <input type="radio" name="delivery_method" value="SMARTPOSTI" data-price="2.19" required disabled title="Ar Smartposti dažkārt var rasties problēmas, jo skapīšos var nebūt brīvas vietas - tā ir diezgan izplatīta situācija." />
+                    <span class="delivery-option-content">
+                      <span class="delivery-option-brand">SMARTPOSTI</span>
+                      <small class="delivery-option-price">2,19 €</small>
+                    </span>
+                    <img class="delivery-option-anim delivery-option-anim-smartposti" src="https://raw.githubusercontent.com/alekseymediatype/AlekseyMedia/main/IMAGES/PAYMENTS/Logo_SmartPosti.png" alt="" />
+                  </label>
+                </div>
+            <p class="order-delivery-help" data-i18n="order_delivery_help">Укажи точный пакомат или пункт выдачи, потому что в одном городе их может быть несколько. Цены ниже указаны для Латвии.</p>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label data-i18n="order_city">Город</label>
+              <input type="text" name="city" data-i18n-placeholder="order_city_placeholder" placeholder="Saldus" required disabled />
+            </div>
+            <div class="field">
+              <label data-i18n="order_postal_code">Индекс</label>
+              <input type="text" name="postal_code" data-i18n-placeholder="order_postal_placeholder" placeholder="LV-3801" required disabled />
+            </div>
+          </div>
+
+          <div class="row order-delivery-address-row">
+            <div class="field">
+              <label data-i18n="order_locker_point">Пакомат / пункт выдачи</label>
+              <input type="text" name="parcel_locker" data-i18n-placeholder="order_locker_placeholder" placeholder="OMNIVA Saldus Rimi" required disabled />
+            </div>
+
+            <div class="field">
+              <label data-i18n="order_address">Улица</label>
+              <input type="text" name="street_address" data-i18n-placeholder="order_address_placeholder" placeholder="Rīgas iela" required disabled />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label data-i18n="order_house_number">Номер дома</label>
+              <input type="text" name="house_number" data-i18n-placeholder="order_house_placeholder" placeholder="12" required disabled />
+            </div>
+            <div class="field">
+              <label data-i18n="order_apartment">Номер квартиры</label>
+              <input type="text" name="apartment_number" data-i18n-placeholder="order_apartment_placeholder" placeholder="8" disabled />
+            </div>
+          </div>
+
+          <div class="order-step-actions order-step-actions-split">
+            <button class="btn primary order-submit-btn order-pay-btn order-slide-btn" type="button" data-simple-click="true" disabled>
+              <span class="order-slide-fill" aria-hidden="true"></span>
+              <span class="order-slide-label" data-i18n="order_to_payment">Перейти к оплате →</span>
+              <span class="order-slide-handle" data-slide-handle aria-hidden="true">
+                <span class="order-slide-handle-icon">↗</span>
+              </span>
+            </button>
+            <button class="pill" type="button" data-order-prev data-i18n="order_prev" disabled>← Назад</button>
+          </div>
+        </section>
+
+        <div class="order-side-stack">
+          <aside class="order-summary-card form-card">
+            <div class="availability-badge" data-i18n="merch_available">В наличии</div>
+            <div class="order-summary-image-frame is-loading">
+              <img class="order-summary-image" id="orderProductImage" src="https://raw.githubusercontent.com/alekseymediatype/AlekseyMedia/main/IMAGES/CAP/LIAM%20Black.jpg" alt="" />
+            </div>
+            <div class="order-summary-copy">
+              <div class="cap-item-type" data-order-product-type data-i18n="merch_item_type">Кепка</div>
+              <h1 class="order-title" id="orderProductTitle">Life is a moment. Don't miss it.</h1>
+              <div class="order-price" id="orderProductPrice">35,79 EUR</div>
+              <div class="order-summary-meta" data-order-product-meta hidden></div>
+            </div>
+          </aside>
+
+          <aside class="order-promo-card form-card">
+            <div class="section-kicker orange" data-i18n="order_promo_title">Промокод</div>
+            <p class="order-promo-sub" data-i18n="order_promo_sub">Если у тебя есть промокод, впиши его и получи скидку!</p>
+            <div class="order-promo-controls">
+              <input class="order-promo-input" id="orderPromoInput" type="text" autocomplete="off" spellcheck="false" />
+              <button class="pill order-promo-apply" id="orderPromoApply" type="button" data-i18n="order_promo_apply">Применить</button>
+            </div>
+            <p class="order-promo-status" id="orderPromoStatus" aria-live="polite"></p>
+          </aside>
+        </div>
+
+        <p class="form-status" data-order-status aria-live="polite"></p>
+      </form>
+
+      <div class="order-page-actions">
+        <a class="pill" href="merch.html" data-i18n="merch_page_back" data-skip-loader="true">← Назад</a>
+      </div>
+    </section>
+
+    <div class="footer-note reveal reveal-fade">
+      <span class="footer-note-item" data-i18n="footer_copyright">© 2026 Aleksejs Iļņickis</span>
+      <span class="footer-note-center">
+        <span class="footer-brand-lock">ALEKSEY<span class="footer-green">MEDIA</span></span>
+        <span class="footer-legal" data-i18n="footer_protected">Protected by copyright</span>
+        <span class="footer-owner" data-i18n="footer_copyright">© 2026 Aleksejs Iļņickis</span>
+      </span>
+      <span class="footer-note-item" data-i18n="footer_rights">All rights reserved</span>
+    </div>
+  </main>
+
+  <script src="script.js?v=20260425-03"></script>
+</body>
+</html>
